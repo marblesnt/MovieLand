@@ -5,19 +5,28 @@ const API_URL = 'https://www.omdbapi.com/?i=tt3896198&apikey=3550283d';
 
 const App = () => {
 
-  const searchMovies = async (Year) => {
-    const response = await fetch (`${API_URL}&s=${Year}`);
+  const searchMovies = async (title) => {
+    const response = await fetch (`${API_URL}&s=${title}`);
     const data = await response.json();
 
-    console.log(data);
+    console.log(data.Search);
   }
 
     useEffect(() => {
-      searchMovies('2005');
+      searchMovies('Superman');
     },[])
 
   return (
-    <h1>App</h1>
+
+    <div className='app'>
+
+      <h1>Search Movie</h1>
+
+      <div className='search'>
+        
+      </div>
+
+    </div>
   );
 }
 
